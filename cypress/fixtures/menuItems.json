@@ -1,0 +1,18 @@
+{
+  "filters": {
+    "breakfast": "Breakfast",
+    "savouriesBakes": "Savouries & Bakes",
+    "drinksSnacks": "Drinks & Snacks",
+    "sandwichesSalads": "Sandwiches & Salads",
+    "sweetTreats": "Sweet Treats",
+    "hotFood": "Hot Food"
+  },
+  "cards": {
+    "breakfast": "1000714",
+    "savouriesBakes": "1000446",
+    "drinksSnacks": "2001025",
+    "sandwichesSalads": "1000586",
+    "sweetTreats": "1000128",
+    "hotFood": "1001827"
+  }
+}
