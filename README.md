@@ -25,7 +25,10 @@
 
 1. Clone the repository:
    git clone https://github.com/fairleyk/Cypress-Demo.git
-2. Run the tests:
+2. Install dependencies:
+   cd cypress-Demo
+   npm install
+3. Run the tests:
    npx cypress run --browser chrome
 
 ## Notes:
