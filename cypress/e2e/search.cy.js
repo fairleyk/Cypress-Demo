@@ -1,4 +1,7 @@
 import { devices } from "../support/devices";
+import { menuPage } from "../support/pageObjects/menu";
+
+const menu = new menuPage();
 
 devices.forEach((device) => {
   context(
@@ -10,12 +13,11 @@ devices.forEach((device) => {
     () => {
       it(`Typing into Search Bar shows relevant result on ${device.name}`, () => {
         cy.visit("/menu");
-        cy.contains("button", "Reject all").click();
-        cy.contains("button", "Reject all").should("not.be.visible");
-        cy.get('input[id="article-search"]').type("Vegan");
-        cy.get("[data-test-card]").should("have.length", 3);
-        cy.get('[data-test-card="1002132"]').should("be.visible");
+        menu.rejectCookies();
+        menu.search("Vegan");
+        menu.menuItems().should("have.length", 3);
+        menu.menuItem(menu.veganSausageRoll).should("be.visible");
       });
-    }
+    },
   );
 });

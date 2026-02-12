@@ -11,13 +11,13 @@ devices.forEach((device) => {
       it(`All menu items render correctly on ${device.name}`, () => {
         cy.visit("/menu");
         cy.contains("button", "Reject all").click();
-        cy.get("[data-test-card]").each(($el) => {
-          cy.get($el).scrollIntoView();
-          cy.wrap($el).should("be.visible");
-          cy.wrap($el).find("img").should("be.visible");
-          cy.wrap($el).find("h3").invoke("text").should("not.be.empty");
+        cy.get("[data-test-card]").each((menuItem) => {
+          cy.wrap(menuItem).scrollIntoView();
+          cy.wrap(menuItem).should("be.visible");
+          cy.wrap(menuItem).find("img").should("be.visible");
+          cy.wrap(menuItem).find("h3").invoke("text").should("not.be.empty");
         });
       });
-    }
+    },
   );
 });
